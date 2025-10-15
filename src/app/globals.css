@@ -1,0 +1,186 @@
+/* Updated: 2025-10-15T17:58:52.627Z */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* Shadcn/UI Color Palette - Light Mode */
+  --color-background: #F8FAFC;
+  --color-foreground: #1F2937;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #1F2937;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1F2937;
+
+  --color-primary: #F472B6;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #F8FAFC;
+  --color-secondary-foreground: #1F2937;
+
+  --color-muted: #f0f4f8;
+  --color-muted-foreground: #4B5563;
+
+  --color-accent: #BE185D;
+  --color-accent-foreground: #ffffff;
+
+  --color-destructive: #EF4444;
+  --color-destructive-foreground: #ffffff;
+
+  --color-border: #E5E7EB;
+  --color-input: #E5E7EB;
+  --color-ring: #F472B6;
+
+  --color-chart-1: #BE185D;
+  --color-chart-2: #F472B6;
+  --color-chart-3: #10B981;
+  --color-chart-4: #4B5563;
+  --color-chart-5: #6B7280;
+
+  --color-sidebar: #F8FAFC;
+  --color-sidebar-foreground: #1F2937;
+  --color-sidebar-primary: #F472B6;
+  --color-sidebar-primary-foreground: #ffffff;
+  --color-sidebar-accent: #F0F4F8;
+  --color-sidebar-accent-foreground: #1F2937;
+  --color-sidebar-border: #E5E7EB;
+  --color-sidebar-ring: #F472B6;
+
+  --radius-lg: 0.5rem;
+  --radius-md: calc(0.5rem - 2px);
+  --radius-sm: calc(0.5rem - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  --color-success: #10B981;
+  --color-success-foreground: #ffffff;
+
+  --font-display: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--border);
+  }
+}
+
+@layer utilities {
+  body {
+    font-family: var(--font-body);
+  }
+}
+
+@layer base {
+  :root {
+    --background: var(--color-background);
+    --foreground: var(--color-foreground);
+    --card: var(--color-card);
+    --card-foreground: var(--color-card-foreground);
+    --popover: var(--color-popover);
+    --popover-foreground: var(--color-popover-foreground);
+    --primary: var(--color-primary);
+    --primary-foreground: var(--color-primary-foreground);
+    --secondary: var(--color-secondary);
+    --secondary-foreground: var(--color-secondary-foreground);
+    --muted: var(--color-muted);
+    --muted-foreground: var(--color-muted-foreground);
+    --accent: var(--color-accent);
+    --accent-foreground: var(--color-accent-foreground);
+    --destructive: var(--color-destructive);
+    --destructive-foreground: var(--color-destructive-foreground);
+    --border: var(--color-border);
+    --input: var(--color-input);
+    --ring: var(--color-ring);
+    --chart-1: var(--color-chart-1);
+    --chart-2: var(--color-chart-2);
+    --chart-3: var(--color-chart-3);
+    --chart-4: var(--color-chart-4);
+    --chart-5: var(--color-chart-5);
+    --radius: var(--radius-lg);
+    --sidebar-background: var(--color-sidebar);
+    --sidebar-foreground: var(--color-sidebar-foreground);
+    --sidebar-primary: var(--color-sidebar-primary);
+    --sidebar-primary-foreground: var(--color-sidebar-primary-foreground);
+    --sidebar-accent: var(--color-sidebar-accent);
+    --sidebar-accent-foreground: var(--color-sidebar-accent-foreground);
+    --sidebar-border: var(--color-sidebar-border);
+    --sidebar-ring: var(--color-sidebar-ring);
+
+    --success: var(--color-success);
+    --success-foreground: var(--color-success-foreground);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--foreground);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  h1 { font-size: 3rem; font-weight: 700; }
+  h2 { font-size: 2.25rem; font-weight: 600; }
+  h3 { font-size: 1.875rem; font-weight: 600; }
+  h4 { font-size: 1.5rem; font-weight: 500; }
+  h5 { font-size: 1.25rem; font-weight: 500; }
+  h6 { font-size: 1.125rem; font-weight: 500; }
+
+  p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: var(--primary);
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: var(--accent);
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
+/* Hide Next.js error overlay portal */
+nextjs-portal {
+  display: none !important;
+}
